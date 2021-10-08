@@ -1,3 +1,4 @@
+import React from 'react';
 import { useReducer } from 'react';
 import { Container, Stack } from '@mui/material';
 import { map, xor } from 'lodash/fp';
@@ -11,8 +12,6 @@ const UPDATE_LISTINGS = 'UPDATE_LISTINGS';
 const TOGGLE_FILTER = 'TOGGLE_FILTER';
 
 
-
-
    const filterJobs = jobs => filtersActive => {
      if(filtersActive.length === 0) {
        return jobs;
@@ -22,10 +21,9 @@ const TOGGLE_FILTER = 'TOGGLE_FILTER';
         includes(attributes, filter)
       )
     );
-   }
+   };
 
 const initialFiltersActive = [];
-const initialVisibleJobs = getJobListings(); // [];
 
 const init = () => ({
   filtersActive: initialFiltersActive,
@@ -68,7 +66,7 @@ const toggleFilterDispatcher = dispatch => filter => (
 export const JobListings = () => {
   const [state, dispatch] = useReducer(filterReducer, undefined, init);
   const onToggleFilter = toggleFilterDispatcher(dispatch);
-  
+
   return (
     <Container className="job-listings"
       sx={{

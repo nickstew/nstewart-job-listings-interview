@@ -1,8 +1,6 @@
-// import './App.css';
+import React from 'react';
 import { Box } from '@mui/system';
 import JobListings from './pages/job-listings';
-
-
 
 function App() {
   return (

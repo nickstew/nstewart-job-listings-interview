@@ -1,7 +1,6 @@
 import { map, } from 'lodash/fp';
 import listings from '../data.json';
 
-
 export const transformJobListings = map(listing => {
   return {
     ...listing,
