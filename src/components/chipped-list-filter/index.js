@@ -1,7 +1,7 @@
 import { Chip } from "@mui/material";
 import { Box } from "@mui/system"
 
-const ChippedListFilter = () => {
+const ChippedListFilter = ({filters, onToggleFilter}) => {
   return (
     <Box sx={{
       position: 'absolute',
@@ -11,7 +11,14 @@ const ChippedListFilter = () => {
       margin: '0 auto 0 auto',
       maxWidth: '1200px',
       }}>
-        <Chip>Hello</Chip>
+      {filters.map(filter => (
+        <Chip
+          onDelete={() => onToggleFilter(filter)}
+          onClick={() => onToggleFilter(filter)}
+          label={filter}
+        />
+      ))}
+        <Chip label={}></Chip>
       </Box>
   )
 };
