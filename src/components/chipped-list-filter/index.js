@@ -18,7 +18,6 @@ const ChippedListFilter = ({filters, onToggleFilter}) => {
           label={filter}
         />
       ))}
-        <Chip label={}></Chip>
       </Box>
   )
 };
